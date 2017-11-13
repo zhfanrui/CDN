@@ -1,3 +1,5 @@
+! Title:  Block-Google
+
 *.google.com
 *.googletagmanager.com
 *.google-analytics.com
