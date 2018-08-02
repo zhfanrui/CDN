@@ -3,10 +3,7 @@
 echo Welcome!
 password=$1
 
-apt-get update -y
-apt-get upgrade -y
-
-apt-get install git postgresql -y
+apt-get update -y && apt-get upgrade -y && apt-get install git postgresql -y
 sudo -i -u postgres
 createuser gogs
 createdb gogs
