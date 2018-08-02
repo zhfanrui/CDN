@@ -4,20 +4,11 @@ echo Welcome!
 password=$1
 
 apt-get update -y && apt-get upgrade -y && apt-get install git postgresql -y
-sudo -i -u postgres
-createuser gogs
-createdb gogs
-logout
 
-echo "$password
-$password
+echo 'create user gogs with password '$password';
+create database gogs owner gogs;
+grant all privileges on database gogs to gogs;' | sudo -u postgres psql
 
-
-
-
-
-Y
-" | sudo adduser gogs # need more instruction
 
 wget https://dl.gogs.io/0.11.53/gogs_0.11.53_linux_amd64.tar.gz
 
