@@ -6,8 +6,8 @@
     - name: test connection
       ping:
     - name: psql
-        apt:
-          name: postgresql 
+      apt:
+        name: postgresql 
     - name: postgresql_db
       postgresql_db:
         name: gogs
