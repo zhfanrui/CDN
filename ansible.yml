@@ -1,5 +1,5 @@
 ---
-- hosts: 10.142.0.3
+- hosts: 10.142.0.2
   remote_user: fr970414
   sudo: true
   tasks:
@@ -15,9 +15,9 @@
       postgresql_user:
         db: gogs
         name: gogs
-        password: ${{password}}
+        password: 123456
         priv: "CONNECT/gogs:ALL"
     - name: Download foo.conf
       get_url:
-        url: http://example.com/path/file.conf
-        dest: /etc/foo.conf
+        url: https://raw.githubusercontent.com/zhfanrui/CDN/master/ansible.yml
+        dest: ~/
