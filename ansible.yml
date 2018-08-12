@@ -1,0 +1,23 @@
+---
+- hosts: 10.142.0.3
+  remote_user: fr970414
+  sudo: true
+  tasks:
+    - name: test connection
+      ping:
+    - name: psql
+        apt:
+          name: postgresql 
+    - name: postgresql_db
+      postgresql_db:
+        name: gogs
+    - name: postgresql_user
+      postgresql_user:
+        db: gogs
+        name: gogs
+        password: ${{password}}
+        priv: "CONNECT/gogs:ALL"
+    - name: Download foo.conf
+      get_url:
+        url: http://example.com/path/file.conf
+        dest: /etc/foo.conf
